@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Embedding Vega-Lite</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script>
+</head>
+<body>
+
+  <div id="vis"></div>
+
+  <script type="text/javascript">
+    var yourVlSpec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "width": 700,
+  "height": 500,
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://opendata.arcgis.com/datasets/cd78700c5c5c4a338090ce4c7b996f03_3.geojson",
+        "format": {
+          "type": "json",
+          "feature": "feature"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "color": {
+          "value": "#bcbcbc"
+        }
+      }
+    },
+    {
+   "data": {
+     "url": "https://opendata.arcgis.com/datasets/6acce9081eed4703860bff397d88e682_26.geojson",
+     "format": {
+       "type": "topojson",
+       "feature": "point"
+     }
+   }
+  ]
+}
+
+
+    vegaEmbed("#vis", yourVlSpec);
+  </script>
+</body>
+</html>
