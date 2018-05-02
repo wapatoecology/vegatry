@@ -12,44 +12,38 @@
 
   <script type="text/javascript">
     var yourVlSpec = {
-  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
-  "width": 700,
-  "height": 500,
-  "config": {
-    "view": {
-      "stroke": "transparent"
-    }
-  },
-  "layer": [
-    {
-      "data": {
-        "url": "https://opendata.arcgis.com/datasets/cd78700c5c5c4a338090ce4c7b996f03_3.geojson",
-        "format": {
-          "type": "json",
-          "feature": "feature"
-        }
-      },
-      "mark": {
-        "type": "geoshape",
-        "stroke": "white",
-        "strokeWidth": 1
-      },
-      "encoding": {
-        "color": {
-          "value": "#bcbcbc"
-        }
-      }
-    },
-    {
-   "data": {
-     "url": "https://opendata.arcgis.com/datasets/6acce9081eed4703860bff397d88e682_26.geojson",
-     "format": {
-       "type": "topojson",
-       "feature": "point"
-     }
-   }
-  ]
-}
+      "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+      "width": 700,
+      "height": 500,
+      "config": {
+        "view": {
+          "stroke": "transparent"}},
+      "layer": [
+          {"data": {
+              "url": "https://opendata.arcgis.com/datasets/cd78700c5c5c4a338090ce4c7b996f03_3.geojson",
+              "format": {
+                "type": "json",
+                "feature": "feature"}},
+           "mark": {
+             "type": "geoshape",
+             "stroke": "white",
+             "strokeWidth": 1},
+           "encoding": {
+             "color": {
+               "value": "#bcbcbc"}}},
+          {"data": {
+             "url": "https://opendata.arcgis.com/datasets/6acce9081eed4703860bff397d88e682_26.geojson",
+             "format": {
+               "type": "json",
+               "feature": "features"}},
+           "mark": {
+             "type": "geoshape",
+             "fill": "#eee",
+             "stroke": "white"},
+           "encoding": {
+             "color": {
+               "value": "purple"}}}
+      ]};
 
 
     vegaEmbed("#vis", yourVlSpec);
